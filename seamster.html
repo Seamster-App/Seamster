@@ -3,11 +3,36 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> main}}
+  <h1>Seamster</h1>
+  {{#if currentUser}}
+    {{> dashboard}}
+  {{else}}
+    {{> signup}}
+    {{> login}}
+  {{/if}}
 </body>
 
-<template name="main">
-  <p>test</p>
+<template name="signup">
+  <form>
+    <input type="text" id="signup-email">
+    <input type="password" id="signup-password">
+    <input type="submit" value="Sign Up">
+  </form>
+</template>
+
+<template name="login">
+  <form>
+    <input type="text" id="login-email">
+    <input type="password" id="login-password">
+    <input type="submit" value="Login">
+  </form>
+</template>
+
+<template name="dashboard">
+  <p>
+    Hello {{currentUser.username}}!
+  </p>
+  <p>
+    <a href="#" class="logout">Logout</a>
+  </p>
 </template>
