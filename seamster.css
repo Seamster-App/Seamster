@@ -1,1 +1,13 @@
 /* CSS declarations go here */
+html {
+  font-family: sans-serif;
+  color: #2f2f2f;
+}
+
+form {
+  margin-bottom: 1rem;
+}
+
+input {
+  display: block;
+}
